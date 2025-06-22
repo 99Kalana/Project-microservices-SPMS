@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: user-service # MUST match the .yml filename in your config repo (e.g., user-service.yml)
+  cloud:
+    config:
+      uri: http://localhost:8888 # URL of your Config Server
+
+# Eureka client configuration remains here as it's needed for discovery
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

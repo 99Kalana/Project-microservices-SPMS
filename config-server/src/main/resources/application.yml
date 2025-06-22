@@ -1,0 +1,26 @@
+server:
+  port: 8888 # Default port for Spring Cloud Config Server
+
+spring:
+  application:
+    name: config-server # Name for Eureka registration
+  cloud:
+    config:
+      server:
+        # Use a local Git repository for simplicity during development
+        # For production, this would be a remote Git repository (GitHub, GitLab, Bitbucket)
+        git:
+          uri: file:///C:/Users/Karl/Desktop/spms-config-repo # <--- IMPORTANT: REPLACE WITH YOUR ACTUAL PATH
+          # Search for config files in the root of the repo
+          search-paths:
+            - '{application}' # Searches for {application}.yml (e.g., user-service.yml)
+            - '{application}-{profile}' # Searches for {application}-{profile}.yml (e.g., user-service-dev.yml)
+          default-label: main # Or 'master' depending on your Git branch name
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ # Your Eureka server URL
+  instance:
+    hostname: localhost
+    prefer-ip-address: true

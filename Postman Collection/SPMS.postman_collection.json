@@ -1,0 +1,4176 @@
+{
+	"info": {
+		"_postman_id": "20bdfb59-e5d5-4308-9e5f-4aa7aecbe63e",
+		"name": "SPMS_Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42450843"
+	},
+	"item": [
+		{
+			"name": "Parking-Space-Service",
+			"item": [
+				{
+					"name": "save parking space data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\": \"Level 1, Spot P103\",\r\n    \"zone\": \"West Wing\",\r\n    \"isAvailable\": true,\r\n    \"type\": \"Standard\",\r\n    \"externalRefId\": \"SENSOR_103\"\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"location\": \"Level 1, Spot P103\",\r\n    \"zone\": \"West Wing\",\r\n    \"isAvailable\": true,\r\n    \"type\": \"Standard\",\r\n    \"externalRefId\": \"SENSOR_103\"\r\n} ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:31:54 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Parking Space Saved Successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"location\": \"Level 1, Spot P103\",\n        \"zone\": \"West Wing\",\n        \"available\": false,\n        \"type\": \"Standard\",\n        \"externalRefId\": \"SENSOR_103\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get all parking spaces data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:42:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"All Parking Spaces Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"location\": \"Level 1, Spot P101\",\n            \"zone\": \"East Wing\",\n            \"available\": true,\n            \"type\": \"Standard\",\n            \"externalRefId\": \"SENSOR_101\"\n        },\n        {\n            \"id\": 2,\n            \"location\": \"Level 1, Spot P102\",\n            \"zone\": \"West Wing\",\n            \"available\": true,\n            \"type\": \"Standard\",\n            \"externalRefId\": \"SENSOR_102\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get parking space data by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:34:36 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Parking Space Retrieved Successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"location\": \"Level 1, Spot P102\",\n        \"zone\": \"West Wing\",\n        \"available\": false,\n        \"type\": \"Standard\",\n        \"externalRefId\": \"SENSOR_102\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update parking space data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \r\n            \"location\": \"Level 1, Spot P103\",\r\n            \"zone\": \"West Wing\",\r\n            \"available\": false,\r\n            \"type\": \"Standard\",\r\n            \"externalRefId\": \"SENSOR_103\"\r\n            \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \r\n            \"location\": \"Level 1, Spot P103\",\r\n            \"zone\": \"West Wing\",\r\n            \"available\": false,\r\n            \"type\": \"Standard\",\r\n            \"externalRefId\": \"SENSOR_103\"\r\n            \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:38:59 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Parking Space Updated Successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"location\": \"Level 1, Spot P103\",\n        \"zone\": \"West Wing\",\n        \"available\": false,\n        \"type\": \"Standard\",\n        \"externalRefId\": \"SENSOR_103\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete a parking space data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:40:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Parking Space Deleted Successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "get parking space data by zone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/available-by-zone?zone=West Wing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces",
+								"available-by-zone"
+							],
+							"query": [
+								{
+									"key": "zone",
+									"value": "West Wing"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/available-by-zone?zone=West Wing",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"available-by-zone"
+									],
+									"query": [
+										{
+											"key": "zone",
+											"value": "West Wing"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:41:49 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Available Parking Spaces by Zone Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"location\": \"Level 1, Spot P102\",\n            \"zone\": \"West Wing\",\n            \"available\": true,\n            \"type\": \"Standard\",\n            \"externalRefId\": \"SENSOR_102\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "reserve a space",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/2/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces",
+								"2",
+								"reserve"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/2/reserve",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"2",
+										"reserve"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:45:57 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Parking Space Reserved Successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"location\": \"Level 1, Spot P102\",\n        \"zone\": \"West Wing\",\n        \"available\": false,\n        \"type\": \"Standard\",\n        \"externalRefId\": \"SENSOR_102\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Space Status Manually",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/1/status?status=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces",
+								"1",
+								"status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response 1",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/1/status?status=false",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"1",
+										"status"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:54:31 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Parking Space Status Updated Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"location\": \"Level 1, Spot P101\",\n        \"zone\": \"East Wing\",\n        \"available\": false,\n        \"type\": \"Standard\",\n        \"externalRefId\": \"SENSOR_101\"\n    }\n}"
+						},
+						{
+							"name": "response 2",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/1/status?status=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"1",
+										"status"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:55:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Parking Space Status Updated Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"location\": \"Level 1, Spot P101\",\n        \"zone\": \"East Wing\",\n        \"available\": true,\n        \"type\": \"Standard\",\n        \"externalRefId\": \"SENSOR_101\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "release a space",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/2/release",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces",
+								"2",
+								"release"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/2/release",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"2",
+										"release"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:47:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Parking Space Released Successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"location\": \"Level 1, Spot P102\",\n        \"zone\": \"West Wing\",\n        \"available\": true,\n        \"type\": \"Standard\",\n        \"externalRefId\": \"SENSOR_102\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Filter Parking Spaces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/filter?zone=West&available=false&type=Standard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"parking-space-service",
+								"api",
+								"v1",
+								"parking-spaces",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "zone",
+									"value": "West"
+								},
+								{
+									"key": "available",
+									"value": "false"
+								},
+								{
+									"key": "type",
+									"value": "Standard"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/filter?zone=East Wing&available=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "zone",
+											"value": "East Wing"
+										},
+										{
+											"key": "available",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:57:27 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Filtered Parking Spaces Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"location\": \"Level 1, Spot P101\",\n            \"zone\": \"East Wing\",\n            \"available\": true,\n            \"type\": \"Standard\",\n            \"externalRefId\": \"SENSOR_101\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Response 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/parking-space-service/api/v1/parking-spaces/filter?location=P102",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"parking-space-service",
+										"api",
+										"v1",
+										"parking-spaces",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "location",
+											"value": "P102"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 09:58:16 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Filtered Parking Spaces Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"location\": \"Level 1, Spot P102\",\n            \"zone\": \"West Wing\",\n            \"available\": true,\n            \"type\": \"Standard\",\n            \"externalRefId\": \"SENSOR_102\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Vehicle-Service",
+			"item": [
+				{
+					"name": "Register Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"make\": \"Benz\",\r\n    \"model\": \"E30 SL\",\r\n    \"plateNumber\": \"JPU-2415\",\r\n    \"color\": \"Light Red\",\r\n    \"type\": \"Car\",\r\n    \"userId\": 103,\r\n    \"entryStatus\": \"OUT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"api",
+								"v1",
+								"vehicles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"make\": \"Honda\",\r\n    \"model\": \"Civic\",\r\n    \"plateNumber\": \"NHK-5678\",\r\n    \"color\": \"Silver\",\r\n    \"type\": \"Car\",\r\n    \"userId\": 101,\r\n    \"entryStatus\": \"OUT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:10:56 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Vehicle Registered Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"make\": \"Honda\",\n        \"model\": \"Civic\",\n        \"plateNumber\": \"NHK-5678\",\n        \"color\": \"Silver\",\n        \"type\": \"Car\",\n        \"userId\": 101,\n        \"entryStatus\": \"OUT\"\n    }\n}"
+						},
+						{
+							"name": "Response 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"make\": \"Toyota\",\r\n    \"model\": \"Corolla\",\r\n    \"plateNumber\": \"JPU-2415\",\r\n    \"color\": \"Light Blue\",\r\n    \"type\": \"Car\",\r\n    \"userId\": 102,\r\n    \"entryStatus\": \"OUT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:12:36 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Vehicle Registered Successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"make\": \"Toyota\",\n        \"model\": \"Corolla\",\n        \"plateNumber\": \"JPU-2415\",\n        \"color\": \"Light Blue\",\n        \"type\": \"Car\",\n        \"userId\": 102,\n        \"entryStatus\": \"OUT\"\n    }\n}"
+						},
+						{
+							"name": "Response 3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"make\": \"Benz\",\r\n    \"model\": \"E30 SL\",\r\n    \"plateNumber\": \"JPU-2415\",\r\n    \"color\": \"Light Red\",\r\n    \"type\": \"Car\",\r\n    \"userId\": 103,\r\n    \"entryStatus\": \"OUT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:14:07 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Vehicle Registered Successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"make\": \"Benz\",\n        \"model\": \"E30 SL\",\n        \"plateNumber\": \"JPU-2415\",\n        \"color\": \"Light Red\",\n        \"type\": \"Car\",\n        \"userId\": 103,\n        \"entryStatus\": \"OUT\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"api",
+								"v1",
+								"vehicles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:15:54 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"All Vehicles Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"make\": \"Honda\",\n            \"model\": \"Civic\",\n            \"plateNumber\": \"NHK-5678\",\n            \"color\": \"Silver\",\n            \"type\": \"Car\",\n            \"userId\": 101,\n            \"entryStatus\": \"OUT\"\n        },\n        {\n            \"id\": 2,\n            \"make\": \"Toyota\",\n            \"model\": \"Corolla\",\n            \"plateNumber\": \"JPU-2415\",\n            \"color\": \"Light Blue\",\n            \"type\": \"Car\",\n            \"userId\": 102,\n            \"entryStatus\": \"OUT\"\n        },\n        {\n            \"id\": 3,\n            \"make\": \"Benz\",\n            \"model\": \"E30 SL\",\n            \"plateNumber\": \"JPU-2415\",\n            \"color\": \"Light Red\",\n            \"type\": \"Car\",\n            \"userId\": 103,\n            \"entryStatus\": \"OUT\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Vehicle by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"api",
+								"v1",
+								"vehicles",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:18:44 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Vehicle Retrieved Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"make\": \"Honda\",\n        \"model\": \"Civic\",\n        \"plateNumber\": \"NHK-5678\",\n        \"color\": \"Silver\",\n        \"type\": \"Car\",\n        \"userId\": 101,\n        \"entryStatus\": \"OUT\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"id\": 1,\r\n    \"make\": \"Honda\",\r\n    \"model\": \"Civic Type R\",\r\n    \"plateNumber\": \"KGT-5678\",\r\n    \"color\": \"Championship White\",\r\n    \"type\": \"Sports Car\",\r\n    \"userId\": 101,\r\n    \"entryStatus\": \"IN\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"api",
+								"v1",
+								"vehicles",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"id\": 1,\r\n    \"make\": \"Honda\",\r\n    \"model\": \"Civic Type R\",\r\n    \"plateNumber\": \"KGT-5678\",\r\n    \"color\": \"Championship White\",\r\n    \"type\": \"Sports Car\",\r\n    \"userId\": 101,\r\n    \"entryStatus\": \"IN\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:20:25 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Vehicle Updated Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"make\": \"Honda\",\n        \"model\": \"Civic Type R\",\n        \"plateNumber\": \"KGT-5678\",\n        \"color\": \"Championship White\",\n        \"type\": \"Sports Car\",\n        \"userId\": 101,\n        \"entryStatus\": \"IN\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"api",
+								"v1",
+								"vehicles",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:21:41 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Vehicle Deleted Successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Record Vehicle Entry",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1/entry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"api",
+								"v1",
+								"vehicles",
+								"1",
+								"entry"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1/entry",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles",
+										"1",
+										"entry"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:25:59 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Vehicle Entry Recorded Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"make\": \"Honda\",\n        \"model\": \"Civic Type R\",\n        \"plateNumber\": \"KGT-5678\",\n        \"color\": \"Championship White\",\n        \"type\": \"Sports Car\",\n        \"userId\": 101,\n        \"entryStatus\": \"IN\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Record Vehicle Exit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1/exit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"api",
+								"v1",
+								"vehicles",
+								"1",
+								"exit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1/exit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles",
+										"1",
+										"exit"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:27:07 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Vehicle Exit Recorded Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"make\": \"Honda\",\n        \"model\": \"Civic Type R\",\n        \"plateNumber\": \"KGT-5678\",\n        \"color\": \"Championship White\",\n        \"type\": \"Sports Car\",\n        \"userId\": 101,\n        \"entryStatus\": \"OUT\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Vehicle Status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1/status?status=PARKED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"api",
+								"v1",
+								"vehicles",
+								"1",
+								"status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "PARKED"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/1/status?status=PARKED",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles",
+										"1",
+										"status"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "PARKED"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:28:22 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Vehicle Status Updated Successfully to PARKED\",\n    \"data\": {\n        \"id\": 1,\n        \"make\": \"Honda\",\n        \"model\": \"Civic Type R\",\n        \"plateNumber\": \"KGT-5678\",\n        \"color\": \"Championship White\",\n        \"type\": \"Sports Car\",\n        \"userId\": 101,\n        \"entryStatus\": \"PARKED\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Vehicles by User ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/by-user/103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle-service",
+								"api",
+								"v1",
+								"vehicles",
+								"by-user",
+								"103"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vehicle-service/api/v1/vehicles/by-user/103",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicle-service",
+										"api",
+										"v1",
+										"vehicles",
+										"by-user",
+										"103"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:29:44 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Vehicles for User ID 103 Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"make\": \"Benz\",\n            \"model\": \"E30 SL\",\n            \"plateNumber\": \"JPU-2415\",\n            \"color\": \"Light Red\",\n            \"type\": \"Car\",\n            \"userId\": 103,\n            \"entryStatus\": \"OUT\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User-Service",
+			"item": [
+				{
+					"name": "Register a User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"testuser3\",\r\n    \"password\": \"password789\",\r\n    \"email\": \"test2@example.com\",\r\n    \"firstName\": \"Test2\",\r\n    \"lastName\": \"User2\",\r\n    \"contactNumber\": \"1234567890\",\r\n    \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"password\": \"password123\",\r\n    \"email\": \"test@example.com\",\r\n    \"firstName\": \"Test\",\r\n    \"lastName\": \"User\",\r\n    \"contactNumber\": \"1234567890\",\r\n    \"role\": \"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:33:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"User Registered Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"username\": \"testuser\",\n        \"password\": null,\n        \"email\": \"test@example.com\",\n        \"firstName\": \"Test\",\n        \"lastName\": \"User\",\n        \"contactNumber\": \"1234567890\",\n        \"role\": \"USER\"\n    }\n}"
+						},
+						{
+							"name": "Response 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"testuser2\",\r\n    \"password\": \"password456\",\r\n    \"email\": \"test1@example.com\",\r\n    \"firstName\": \"Test1\",\r\n    \"lastName\": \"User1\",\r\n    \"contactNumber\": \"1234567890\",\r\n    \"role\": \"ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:35:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"User Registered Successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"username\": \"testuser2\",\n        \"password\": null,\n        \"email\": \"test1@example.com\",\n        \"firstName\": \"Test1\",\n        \"lastName\": \"User1\",\n        \"contactNumber\": \"1234567890\",\n        \"role\": \"ADMIN\"\n    }\n}"
+						},
+						{
+							"name": "Response 3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"testuser3\",\r\n    \"password\": \"password789\",\r\n    \"email\": \"test2@example.com\",\r\n    \"firstName\": \"Test2\",\r\n    \"lastName\": \"User2\",\r\n    \"contactNumber\": \"1234567890\",\r\n    \"role\": \"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:36:16 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"User Registered Successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"username\": \"testuser3\",\n        \"password\": null,\n        \"email\": \"test2@example.com\",\n        \"firstName\": \"Test2\",\n        \"lastName\": \"User2\",\n        \"contactNumber\": \"1234567890\",\n        \"role\": \"USER\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"username\": \"testuser2\",\r\n    \"password\": \"password456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"username\": \"testuser2\",\r\n    \"password\": \"password456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:41:05 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Authentication Successful\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw\",\n        \"userId\": 2,\n        \"username\": \"testuser2\",\n        \"role\": \"ADMIN\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:43:49 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"All Users Retrieved Successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"username\": \"testuser\",\n            \"password\": null,\n            \"email\": \"test@example.com\",\n            \"firstName\": \"Test\",\n            \"lastName\": \"User\",\n            \"contactNumber\": \"1234567890\",\n            \"role\": \"USER\"\n        },\n        {\n            \"id\": 2,\n            \"username\": \"testuser2\",\n            \"password\": null,\n            \"email\": \"test1@example.com\",\n            \"firstName\": \"Test1\",\n            \"lastName\": \"User1\",\n            \"contactNumber\": \"1234567890\",\n            \"role\": \"ADMIN\"\n        },\n        {\n            \"id\": 3,\n            \"username\": \"testuser3\",\n            \"password\": null,\n            \"email\": \"test2@example.com\",\n            \"firstName\": \"Test2\",\n            \"lastName\": \"User2\",\n            \"contactNumber\": \"1234567890\",\n            \"role\": \"USER\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/users/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:45:45 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"User Retrieved Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"username\": \"testuser\",\n        \"password\": null,\n        \"email\": \"test@example.com\",\n        \"firstName\": \"Test\",\n        \"lastName\": \"User\",\n        \"contactNumber\": \"1234567890\",\n        \"role\": \"USER\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1, \r\n    \"username\": \"testuser\",\r\n    \"email\": \"updated_test@example.com\",\r\n    \"firstName\": \"Updated\",\r\n    \"lastName\": \"User\",\r\n    \"contactNumber\": \"9876543210\",\r\n    \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1, \r\n    \"username\": \"testuser\",\r\n    \"email\": \"updated_test@example.com\",\r\n    \"firstName\": \"Updated\",\r\n    \"lastName\": \"User\",\r\n    \"contactNumber\": \"9876543210\",\r\n    \"role\": \"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/users/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:48:08 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"User Profile Updated Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"username\": \"testuser\",\n        \"password\": null,\n        \"email\": \"updated_test@example.com\",\n        \"firstName\": \"Updated\",\n        \"lastName\": \"User\",\n        \"contactNumber\": \"9876543210\",\n        \"role\": \"USER\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/users/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/users/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:50:12 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"User Deleted Successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1, \r\n    \"vehicleNumber\": \"XYZ-1234\",\r\n    \"bookingTime\": \"2025-06-10T10:00:00\",\r\n    \"checkInTime\": \"2025-06-10T10:30:00\",\r\n    \"checkOutTime\": \"2025-06-10T12:30:00\",\r\n    \"parkingSpotId\": \"P101\",\r\n    \"totalCost\": 15.50,\r\n    \"status\": \"CONFIRMED\",\r\n    \"remarks\": \"Standard booking for 2 hours\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"bookings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": 1, \r\n    \"vehicleNumber\": \"XYZ-1234\",\r\n    \"bookingTime\": \"2025-06-10T10:00:00\",\r\n    \"checkInTime\": \"2025-06-10T10:30:00\",\r\n    \"checkOutTime\": \"2025-06-10T12:30:00\",\r\n    \"parkingSpotId\": \"P101\",\r\n    \"totalCost\": 15.50,\r\n    \"status\": \"CONFIRMED\",\r\n    \"remarks\": \"Standard booking for 2 hours\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"bookings"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:53:45 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Booking created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"userId\": null,\n        \"vehicleNumber\": \"XYZ-1234\",\n        \"bookingTime\": \"2025-06-10T10:00:00\",\n        \"checkInTime\": \"2025-06-10T10:30:00\",\n        \"checkOutTime\": \"2025-06-10T12:30:00\",\n        \"parkingSpotId\": \"P101\",\n        \"totalCost\": 15.5,\n        \"status\": \"CONFIRMED\",\n        \"remarks\": \"Standard booking for 2 hours\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"bookings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"bookings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:55:38 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"All bookings retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"userId\": 1,\n            \"vehicleNumber\": \"XYZ-1234\",\n            \"bookingTime\": \"2025-06-10T10:00:00\",\n            \"checkInTime\": \"2025-06-10T10:30:00\",\n            \"checkOutTime\": \"2025-06-10T12:30:00\",\n            \"parkingSpotId\": \"P101\",\n            \"totalCost\": 15.5,\n            \"status\": \"CONFIRMED\",\n            \"remarks\": \"Standard booking for 2 hours\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Bookings by User ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/bookings/user/1 ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"bookings",
+								"user",
+								"1 "
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/bookings/user/1 ",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"bookings",
+										"user",
+										"1 "
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:57:19 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Bookings for user retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"userId\": 1,\n            \"vehicleNumber\": \"XYZ-1234\",\n            \"bookingTime\": \"2025-06-10T10:00:00\",\n            \"checkInTime\": \"2025-06-10T10:30:00\",\n            \"checkOutTime\": \"2025-06-10T12:30:00\",\n            \"parkingSpotId\": \"P101\",\n            \"totalCost\": 15.5,\n            \"status\": \"CONFIRMED\",\n            \"remarks\": \"Standard booking for 2 hours\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vehicleNumber\": \"XYZ-5678\",\r\n    \"status\": \"COMPLETED\",\r\n    \"totalCost\": 20.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/bookings/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vehicleNumber\": \"XYZ-5678\",\r\n    \"status\": \"COMPLETED\",\r\n    \"totalCost\": 20.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/bookings/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"bookings",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 10:59:25 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Booking updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"userId\": null,\n        \"vehicleNumber\": \"XYZ-5678\",\n        \"bookingTime\": \"2025-06-10T10:00:00\",\n        \"checkInTime\": \"2025-06-10T10:30:00\",\n        \"checkOutTime\": \"2025-06-10T12:30:00\",\n        \"parkingSpotId\": \"P101\",\n        \"totalCost\": 20,\n        \"status\": \"COMPLETED\",\n        \"remarks\": \"Standard booking for 2 hours\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/user-service/api/v1/bookings/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user-service",
+								"api",
+								"v1",
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/bookings/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"bookings",
+										"1"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:01:21 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Response 2",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIiLCJpYXQiOjE3NTA1ODg4NjUsImV4cCI6MTc1MDU5MjQ2NX0.k778mUYFX486Vjv-EcP6X5E9YMUIn99nNlHj-_-XyWw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/user-service/api/v1/bookings/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user-service",
+										"api",
+										"v1",
+										"bookings",
+										"1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:02:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 404,\n    \"message\": \"Booking not found with ID: 1\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Payment-Service",
+			"item": [
+				{
+					"name": "Process Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookingId\": 1, \r\n    \"amount\": 25.00,\r\n    \"cardHolderName\": \"John Doe\",\r\n    \"cardNumber\": \"4111222233334444\",\r\n    \"expiryDate\": \"12/27\",\r\n    \"cvv\": \"123\",\r\n    \"paymentMethod\": \"CARD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/payment-service/api/v1/payments/process",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment-service",
+								"api",
+								"v1",
+								"payments",
+								"process"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookingId\": 1, \r\n    \"amount\": 25.00,\r\n    \"cardHolderName\": \"John Doe\",\r\n    \"cardNumber\": \"4111222233334444\",\r\n    \"expiryDate\": \"12/27\",\r\n    \"cvv\": \"123\",\r\n    \"paymentMethod\": \"CARD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/payment-service/api/v1/payments/process",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payment-service",
+										"api",
+										"v1",
+										"payments",
+										"process"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:06:14 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Payment processed successfully\",\n    \"data\": {\n        \"transactionId\": \"265fc549-d6bf-4fd7-b32c-d22c8af0cbac\",\n        \"bookingId\": 1,\n        \"amount\": 25,\n        \"status\": \"SUCCESS\",\n        \"message\": null,\n        \"transactionTime\": \"2025-06-22T16:36:14.3731339\",\n        \"digitalReceipt\": {\n            \"receiptId\": \"RECEIPT-BA81B2EB\",\n            \"transactionId\": \"265fc549-d6bf-4fd7-b32c-d22c8af0cbac\",\n            \"issuedDate\": \"2025-06-22T16:36:14.3731339\",\n            \"amountPaid\": 25,\n            \"paidFor\": \"Parking Fee for Booking #1\",\n            \"customerName\": \"John Doe\",\n            \"paymentMethod\": \"CARD\",\n            \"merchantInfo\": \"Smart Parking Management System\",\n            \"remarks\": \"Thank you for your payment!\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Response 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookingId\": 2,\r\n    \"amount\": 15000.00, // High amount to trigger mock failure\r\n    \"cardHolderName\": \"Jane Smith\",\r\n    \"cardNumber\": \"5111222233334444\",\r\n    \"expiryDate\": \"10/26\",\r\n    \"cvv\": \"000\", // Special CVV to trigger mock failure\r\n    \"paymentMethod\": \"CARD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/payment-service/api/v1/payments/process",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payment-service",
+										"api",
+										"v1",
+										"payments",
+										"process"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:07:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Payment failed\",\n    \"data\": {\n        \"transactionId\": \"bd864748-8b70-4788-b0cc-b2fd1a6bbb58\",\n        \"bookingId\": 2,\n        \"amount\": 15000,\n        \"status\": \"FAILED\",\n        \"message\": null,\n        \"transactionTime\": \"2025-06-22T16:37:33.9894787\",\n        \"digitalReceipt\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Payment Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/payment-service/api/v1/payments/265fc549-d6bf-4fd7-b32c-d22c8af0cbac",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment-service",
+								"api",
+								"v1",
+								"payments",
+								"265fc549-d6bf-4fd7-b32c-d22c8af0cbac"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/payment-service/api/v1/payments/265fc549-d6bf-4fd7-b32c-d22c8af0cbac",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payment-service",
+										"api",
+										"v1",
+										"payments",
+										"265fc549-d6bf-4fd7-b32c-d22c8af0cbac"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:08:58 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Payment details retrieved successfully\",\n    \"data\": {\n        \"transactionId\": \"265fc549-d6bf-4fd7-b32c-d22c8af0cbac\",\n        \"bookingId\": 1,\n        \"amount\": 25,\n        \"status\": \"SUCCESS\",\n        \"message\": null,\n        \"transactionTime\": \"2025-06-22T16:36:14.373134\",\n        \"digitalReceipt\": {\n            \"receiptId\": \"RECEIPT-E3E617D6\",\n            \"transactionId\": \"265fc549-d6bf-4fd7-b32c-d22c8af0cbac\",\n            \"issuedDate\": \"2025-06-22T16:36:14.373134\",\n            \"amountPaid\": 25,\n            \"paidFor\": \"Parking Fee for Booking #1\",\n            \"customerName\": \"John Doe\",\n            \"paymentMethod\": \"CARD\",\n            \"merchantInfo\": \"Smart Parking Management System\",\n            \"remarks\": \"Thank you for your payment!\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/payment-service/api/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment-service",
+								"api",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/payment-service/api/v1/payments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payment-service",
+										"api",
+										"v1",
+										"payments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:10:07 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"All payments retrieved successfully\",\n    \"data\": [\n        {\n            \"transactionId\": \"265fc549-d6bf-4fd7-b32c-d22c8af0cbac\",\n            \"bookingId\": 1,\n            \"amount\": 25,\n            \"status\": \"SUCCESS\",\n            \"message\": null,\n            \"transactionTime\": \"2025-06-22T16:36:14.373134\",\n            \"digitalReceipt\": {\n                \"receiptId\": \"RECEIPT-E3E617D6\",\n                \"transactionId\": \"265fc549-d6bf-4fd7-b32c-d22c8af0cbac\",\n                \"issuedDate\": \"2025-06-22T16:36:14.373134\",\n                \"amountPaid\": 25,\n                \"paidFor\": \"Parking Fee for Booking #1\",\n                \"customerName\": \"John Doe\",\n                \"paymentMethod\": \"CARD\",\n                \"merchantInfo\": \"Smart Parking Management System\",\n                \"remarks\": \"Thank you for your payment!\"\n            }\n        },\n        {\n            \"transactionId\": \"bd864748-8b70-4788-b0cc-b2fd1a6bbb58\",\n            \"bookingId\": 2,\n            \"amount\": 15000,\n            \"status\": \"FAILED\",\n            \"message\": null,\n            \"transactionTime\": \"2025-06-22T16:37:33.989479\",\n            \"digitalReceipt\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Payments by Booking ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/payment-service/api/v1/payments/booking/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment-service",
+								"api",
+								"v1",
+								"payments",
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/payment-service/api/v1/payments/booking/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payment-service",
+										"api",
+										"v1",
+										"payments",
+										"booking",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:11:13 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Payments for booking retrieved successfully\",\n    \"data\": [\n        {\n            \"transactionId\": \"265fc549-d6bf-4fd7-b32c-d22c8af0cbac\",\n            \"bookingId\": 1,\n            \"amount\": 25,\n            \"status\": \"SUCCESS\",\n            \"message\": null,\n            \"transactionTime\": \"2025-06-22T16:36:14.373134\",\n            \"digitalReceipt\": {\n                \"receiptId\": \"RECEIPT-E3E617D6\",\n                \"transactionId\": \"265fc549-d6bf-4fd7-b32c-d22c8af0cbac\",\n                \"issuedDate\": \"2025-06-22T16:36:14.373134\",\n                \"amountPaid\": 25,\n                \"paidFor\": \"Parking Fee for Booking #1\",\n                \"customerName\": \"John Doe\",\n                \"paymentMethod\": \"CARD\",\n                \"merchantInfo\": \"Smart Parking Management System\",\n                \"remarks\": \"Thank you for your payment!\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Digital Receipt",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/payment-service/api/v1/payments/265fc549-d6bf-4fd7-b32c-d22c8af0cbac/receipt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payment-service",
+								"api",
+								"v1",
+								"payments",
+								"265fc549-d6bf-4fd7-b32c-d22c8af0cbac",
+								"receipt"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/payment-service/api/v1/payments/265fc549-d6bf-4fd7-b32c-d22c8af0cbac/receipt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payment-service",
+										"api",
+										"v1",
+										"payments",
+										"265fc549-d6bf-4fd7-b32c-d22c8af0cbac",
+										"receipt"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:13:01 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Digital receipt retrieved successfully\",\n    \"data\": {\n        \"receiptId\": \"RECEIPT-E3E617D6\",\n        \"transactionId\": \"265fc549-d6bf-4fd7-b32c-d22c8af0cbac\",\n        \"issuedDate\": \"2025-06-22T16:36:14.373134\",\n        \"amountPaid\": 25,\n        \"paidFor\": \"Parking Fee for Booking #1\",\n        \"customerName\": \"John Doe\",\n        \"paymentMethod\": \"CARD\",\n        \"merchantInfo\": \"Smart Parking Management System\",\n        \"remarks\": \"Thank you for your payment!\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Config-Server",
+			"item": [
+				{
+					"name": "Get User-Service Configurations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/user-service/main",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"user-service",
+								"main"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/user-service/main",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"user-service",
+										"main"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:16:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"user-service\",\n    \"profiles\": [\n        \"main\"\n    ],\n    \"label\": null,\n    \"version\": \"f7fa553f14c421056a4c24f91b9e10cae2d10707\",\n    \"state\": null,\n    \"propertySources\": [\n        {\n            \"name\": \"file:///C:/Users/Karl/Desktop/spms-config-repo/user-service.yml\",\n            \"source\": {\n                \"server.port\": 8083,\n                \"server.servlet.context-path\": \"/user-service\",\n                \"spring.application.name\": \"user-service\",\n                \"spring.datasource.url\": \"jdbc:mysql://localhost:3306/spms_user_db?createDatabaseIfNotExist=true\",\n                \"spring.datasource.username\": \"root\",\n                \"spring.datasource.password\": \"Ijse@1234\",\n                \"spring.datasource.driver-class-name\": \"com.mysql.cj.jdbc.Driver\",\n                \"spring.jpa.hibernate.ddl-auto\": \"update\",\n                \"spring.jpa.show-sql\": true,\n                \"spring.jpa.properties.hibernate.dialect\": \"org.hibernate.dialect.MySQLDialect\",\n                \"spring.jpa.open-in-view\": false,\n                \"eureka.client.service-url.defaultZone\": \"http://localhost:8761/eureka/\",\n                \"jwt.secret\": \"bWlzc2luZ3Rocm93bnJvb3R3aXRoaW5tb3V0aHNtYWxsc2hhbGxnYXJhZ2Vpc2xhbmQ=\",\n                \"jwt.expiration\": 3600000\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Payment-Service Configurations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/payment-service/main",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"payment-service",
+								"main"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/payment-service/main",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"payment-service",
+										"main"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:17:27 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"payment-service\",\n    \"profiles\": [\n        \"main\"\n    ],\n    \"label\": null,\n    \"version\": \"f7fa553f14c421056a4c24f91b9e10cae2d10707\",\n    \"state\": null,\n    \"propertySources\": [\n        {\n            \"name\": \"file:///C:/Users/Karl/Desktop/spms-config-repo/payment-service.yml\",\n            \"source\": {\n                \"server.port\": 8084,\n                \"server.servlet.context-path\": \"/payment-service\",\n                \"spring.application.name\": \"payment-service\",\n                \"spring.datasource.url\": \"jdbc:mysql://localhost:3306/spms_payment_db?createDatabaseIfNotExist=true\",\n                \"spring.datasource.username\": \"root\",\n                \"spring.datasource.password\": \"Ijse@1234\",\n                \"spring.datasource.driver-class-name\": \"com.mysql.cj.jdbc.Driver\",\n                \"spring.jpa.hibernate.ddl-auto\": \"update\",\n                \"spring.jpa.show-sql\": true,\n                \"spring.jpa.properties.hibernate.dialect\": \"org.hibernate.dialect.MySQLDialect\",\n                \"spring.jpa.open-in-view\": false,\n                \"eureka.client.service-url.defaultZone\": \"http://localhost:8761/eureka/\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Vehicle-Service Configurations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/vehicle-service/main",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"vehicle-service",
+								"main"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/vehicle-service/main",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"vehicle-service",
+										"main"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:18:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"vehicle-service\",\n    \"profiles\": [\n        \"main\"\n    ],\n    \"label\": null,\n    \"version\": \"f7fa553f14c421056a4c24f91b9e10cae2d10707\",\n    \"state\": null,\n    \"propertySources\": [\n        {\n            \"name\": \"file:///C:/Users/Karl/Desktop/spms-config-repo/vehicle-service.yml\",\n            \"source\": {\n                \"server.port\": 8082,\n                \"server.servlet.context-path\": \"/vehicle-service\",\n                \"spring.application.name\": \"vehicle-service\",\n                \"spring.datasource.url\": \"jdbc:mysql://localhost:3306/spms_vehicle_db?createDatabaseIfNotExist=true\",\n                \"spring.datasource.username\": \"root\",\n                \"spring.datasource.password\": \"Ijse@1234\",\n                \"spring.datasource.driver-class-name\": \"com.mysql.cj.jdbc.Driver\",\n                \"spring.jpa.hibernate.ddl-auto\": \"update\",\n                \"spring.jpa.show-sql\": true,\n                \"spring.jpa.properties.hibernate.dialect\": \"org.hibernate.dialect.MySQLDialect\",\n                \"spring.jpa.open-in-view\": false,\n                \"eureka.client.service-url.defaultZone\": \"http://localhost:8761/eureka/\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Parking-Space-Service Configurations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/parking-space-service/main ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"parking-space-service",
+								"main "
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/parking-space-service/main ",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"parking-space-service",
+										"main "
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:20:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"parking-space-service\",\n    \"profiles\": [\n        \"main\"\n    ],\n    \"label\": null,\n    \"version\": \"f7fa553f14c421056a4c24f91b9e10cae2d10707\",\n    \"state\": null,\n    \"propertySources\": [\n        {\n            \"name\": \"file:///C:/Users/Karl/Desktop/spms-config-repo/parking-space-service.yml\",\n            \"source\": {\n                \"server.port\": 8081,\n                \"server.servlet.context-path\": \"/parking-space-service\",\n                \"spring.application.name\": \"parking-space-service\",\n                \"spring.datasource.url\": \"jdbc:mysql://localhost:3306/spms_parking_db?createDatabaseIfNotExist=true\",\n                \"spring.datasource.username\": \"root\",\n                \"spring.datasource.password\": \"Ijse@1234\",\n                \"spring.datasource.driver-class-name\": \"com.mysql.cj.jdbc.Driver\",\n                \"spring.jpa.hibernate.ddl-auto\": \"update\",\n                \"spring.jpa.show-sql\": true,\n                \"spring.jpa.properties.hibernate.dialect\": \"org.hibernate.dialect.MySQLDialect\",\n                \"spring.jpa.open-in-view\": false,\n                \"eureka.client.service-url.defaultZone\": \"http://localhost:8761/eureka/\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get API-Gatway Configurations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/api-gatway/main",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"api-gatway",
+								"main"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/api-gatway/main",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api-gatway",
+										"main"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:22:29 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"api-gatway\",\n    \"profiles\": [\n        \"main\"\n    ],\n    \"label\": null,\n    \"version\": \"f7fa553f14c421056a4c24f91b9e10cae2d10707\",\n    \"state\": null,\n    \"propertySources\": [\n        {\n            \"name\": \"file:///C:/Users/Karl/Desktop/spms-config-repo/api-gatway.yml\",\n            \"source\": {\n                \"spring.application.name\": \"api-gateway\",\n                \"spring.cloud.loadbalancer.rule\": \"random\",\n                \"spring.cloud.gateway.routes[0].id\": \"parking-space-service\",\n                \"spring.cloud.gateway.routes[0].uri\": \"lb://PARKING-SPACE-SERVICE\",\n                \"spring.cloud.gateway.routes[0].predicates[0]\": \"Path=/parking-space-service/**\",\n                \"spring.cloud.gateway.routes[1].id\": \"vehicle-service\",\n                \"spring.cloud.gateway.routes[1].uri\": \"lb://VEHICLE-SERVICE\",\n                \"spring.cloud.gateway.routes[1].predicates[0]\": \"Path=/vehicle-service/**\",\n                \"spring.cloud.gateway.routes[2].id\": \"user-service\",\n                \"spring.cloud.gateway.routes[2].uri\": \"lb://USER-SERVICE\",\n                \"spring.cloud.gateway.routes[2].predicates[0]\": \"Path=/user-service/**\",\n                \"spring.cloud.gateway.routes[3].id\": \"payment-service\",\n                \"spring.cloud.gateway.routes[3].uri\": \"lb://PAYMENT-SERVICE\",\n                \"spring.cloud.gateway.routes[3].predicates[0]\": \"Path=/payment-service/**\",\n                \"eureka.client.service-url.defaultZone\": \"http://localhost:8761/eureka/\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Eureka-Server Configuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8888/eureka-server/main",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8888",
+							"path": [
+								"eureka-server",
+								"main"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8888/eureka-server/main",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"eureka-server",
+										"main"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 11:23:30 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"eureka-server\",\n    \"profiles\": [\n        \"main\"\n    ],\n    \"label\": null,\n    \"version\": \"f7fa553f14c421056a4c24f91b9e10cae2d10707\",\n    \"state\": null,\n    \"propertySources\": [\n        {\n            \"name\": \"file:///C:/Users/Karl/Desktop/spms-config-repo/eureka-server.yml\",\n            \"source\": {\n                \"server.port\": 8761,\n                \"spring.application.name\": \"eureka-server\",\n                \"eureka.client.register-with-eureka\": false,\n                \"eureka.client.fetch-registry\": false\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
